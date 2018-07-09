@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" type="text/javascript" src="p5js-temp-sketch_04_apiWeather4980967610487958552.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+
+  <script type="text/javascript">
+      function validar() {     
+      if ((document.getElementById("temperatura").value == "") || document.getElementById("presion").value == "" ||
+        document.getElementById("humedad").value == "" || document.getElementById("viento").value == "") {
+        alert("Ninguno de los campos pueden estar vacíos");
+        return false;
+      } else {
+        alert("Solicitud guardada correctamente");
+        return true;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="w3-container w3-blue-grey">
+  <h1 align="center">Ingeniería Web</h1>
+  </div>
+  <div>
+    <p>
+      Ciudad:
+      <input type="text" id="city" value="Cuenca" class="w3-input"></input><br/>
+      <input type="submit" id="submit" value="Consultar" class="boton_1" /input>
+      <br/>
+      <br/> Temperatura:
+      <input readonly class="w3-input" type="text" id="temperatura" name="temperatura" size="8px"></input>
+      Presión:
+      <input readonly class="w3-input" type="text" id="presion" name="presion" size="8px"></input>
+      Humedad:
+      <input readonly class="w3-input" type="text" id="humedad" name="humedad" size="8px"></input>
+      Velocidad del Viento:
+      <input readonly class="w3-input" type="text" id="viento" name="viento" size="8px"></input>
+    </p>
+
+
+
+    <form action="http://localhost:3000/datos" method="POST" enctype='application/x-www-form-urlencoded' onsubmit="return validar(this);">
+      <input type="text" id="ciudad" style="display: none" name="ciudad"></input>
+      <input readonly type="text" id="datos" style="display: none" name="datos"></input>
+      <p>Nota: Para visualizar el historial de una Ciudad, es necesario guardar la información.</p>
+      <input readonly type="submit" id="submit" value="Guardar" class="boton_1"></input>
+      <br/>
+      <br/>
+    </form>
+  </div>
+  <br/>
+  <br/>
+
+
+</body>
+
+</html>
